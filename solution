@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <stdio.h>
+#include <stdlib.h>
+#include <new>
+#include <cstring>
+ 
+using namespace std;
+ 
+ 
+// int main()
+// {
+ 
+//     int n;
+//     cin>>n;
+//     vector <string> data;
+//     int i = 0;
+//     while(n--)
+//     {
+//         string s;
+//         cin>>s;
+//         data.push_back(s);
+//         int j = 0;
+//         int d=0;
+//         while(j<i)
+//         {
+//             if(!s.compare(data[j]))
+//                 d++;
+//             j++;
+//         }
+//         if (d)
+//             cout << data[i] << d << endl;
+//         else 
+//             cout<<"OK\n";
+//         i++;
+//     }
+ 
+int main()
+{
+    int n;
+    cin >> n;
+ 
+    map<string, int> database;
+    string s;
+    while (n--)
+    {
+        cin >> s;
+        if (database.count(s) == 0)
+        {
+            cout << "OK" << endl;
+            database[s] = 1;
+        }
+        else
+        {
+            cout << s << database[s] << endl;
+            database[s] += 1;
+        }
+    }
+    return 0;
+}
